@@ -12,8 +12,7 @@ public class Advertisement {
     public String rubric = "";
     public String price = "";
     public String desc = "";
-    public String imagePath = PropertyLoader.loadProperty("project.path") + "src/test/resources/g6Zx0AY0Mfc.jpg";
-    public String photoFilePath = new File(PropertyLoader.loadProperty("project.path") + "src/test/resources/g6Zx0AY0Mfc.jpg").getAbsolutePath();
+    public String photoFilePath = new File(PropertyLoader.loadProperty("project.path") + "/src/main/resources/g6Zx0AY0Mfc.jpg").getAbsolutePath();
     public String region = "";
     public String user = "";
     public String email = "";

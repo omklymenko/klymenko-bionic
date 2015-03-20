@@ -35,12 +35,9 @@ public class NegativeAdvTest extends AbstractTest {
         adv.price = price;
         adv.user = user;
         adv.email = email;
-        //advertisementPage.TestFileUpload();
         AdvertisementPage advPage = new AdvertisementPage(driver);
         advertisementPage.setAdv(adv);
         advertisementPage.preview();
-//        (new WebDriverWait(driver, 10))
-//                .until(ExpectedConditions.stalenessOf(driver.findElement(By.cssSelector(".listOverlay>div"))));
         Assert.assertTrue(advPage.isError());
     }
 }

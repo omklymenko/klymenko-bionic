@@ -99,6 +99,6 @@ public class AdvertisementPage extends AbstractPage {
     }
     public boolean isError()
     {
-        return(driver.findElement(By.xpath(".//*[@id='title']/div[2]/div/div/p[2]")).isDisplayed());
+        return(driver.findElement(By.xpath(".//*[@id='title']/div[2]/div/div/p[2]")).isDisplayed()&&driver.findElement(By.xpath(".//*[@id='description']/div[2]/div/div/p/label")).isDisplayed());
     }
 }

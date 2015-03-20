@@ -15,8 +15,6 @@ public class AbstractTest {
     @BeforeClass
     public void initEnv()
     {
-        //driver = BrowserFactory.create(PropertyLoader.loadProperty("browser"));
-        //driver = new Browser(new FirefoxDriver());
         driver = BrowserFactory.create(PropertyLoader.loadProperty("browser"));
     }
 

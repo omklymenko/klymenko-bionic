@@ -35,6 +35,7 @@ public class FilteringTest extends AbstractTest {
     }
     @Test
     public void stateNew(){
+        logger.info("State test");
         HomePage homePage = new HomePage(driver);
         homePage.open();
         homePage.openDetskiyMir();
@@ -42,44 +43,22 @@ public class FilteringTest extends AbstractTest {
         childPage.openOdezhda();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         ChildDressPage childDressPage = new ChildDressPage(driver);
-//        WebDriverWait wait = new WebDriverWait(driver,20);
-//        wait.until(ExpectedConditions.stalenessOf(driver.findElement(By.cssSelector(".listOverlay>div"))));
         childDressPage.state();
-        //Assert.assertTrue(driver.getCurrentUrl().contains("[filter_enum_state][0]=new"));
-//        (new WebDriverWait(driver, 10))
-//                .until(ExpectedConditions.stalenessOf(driver.findElement(By.cssSelector(".listOverlay>div"))));
         childDressPage.openOffer();
         Assert.assertTrue(childDressPage.newIsChosen());
-
     }
     @Test
     public void priceFilter(){
+        logger.info("Price test");
         HomePage homePage = new HomePage(driver);
         homePage.open();
         homePage.openDetskiyMir();
         ChildPage childPage = new ChildPage(driver);
         childPage.openOdezhda();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         ChildDressPage childDressPage = new ChildDressPage(driver);
         childDressPage.price();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         childDressPage.checkPrice();
     }
-
-    public void openDetskiyMir()
-    {
-        HomePage homePage = new HomePage(driver);
-        homePage.open();
-        homePage.openDetskiyMir();
-        ChildPage childPage = new ChildPage(driver);
-        Assert.assertTrue(childPage.isOpened());
-    }
-
-//    public void openDetskayaOdezhda()
-//    {
-//        ChildDressPage childDressPage = new ChildDressPage(driver);
-//        childDressPage.state();
-//        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-//        childDressPage.openOffer();
-//    }
 }

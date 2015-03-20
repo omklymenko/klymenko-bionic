@@ -12,9 +12,6 @@ public class HomePage extends AbstractPage{
 
     private static final By childWorldLink = By.cssSelector("a[data-code='detskiy-mir']");
 
-    //@FindBy(css = "a[data-code='detskiy-mir']")
-    //WebElement childPageLink;
-
     public HomePage(Browser driver)
     {
         super(driver);
