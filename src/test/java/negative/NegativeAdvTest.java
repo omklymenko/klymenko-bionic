@@ -38,6 +38,6 @@ public class NegativeAdvTest extends AbstractTest {
         AdvertisementPage advPage = new AdvertisementPage(driver);
         advertisementPage.setAdv(adv);
         advertisementPage.preview();
-        Assert.assertTrue(advPage.isError());
+        Assert.assertTrue(advPage.isError(), "negativeAdvTest FAILED");
     }
 }

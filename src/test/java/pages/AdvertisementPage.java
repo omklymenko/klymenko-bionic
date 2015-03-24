@@ -29,6 +29,10 @@ public class AdvertisementPage extends AbstractPage {
     private static final By city = By.xpath(".//*[@id='targetsubregion-id-select']/dd/ul/li[8]/a");
     private static final By agreement = By.cssSelector("label[for='agreement']");
     private static final By preview = By.id("preview-link");
+    private static final By addFile = By.xpath(".//*[@id='add-file-1']/div/a");
+    private static final By titleError = By.xpath(".//*[@id='title']/div[2]/div/div/p[2]");
+    private static final By descriptionError = By.xpath(".//*[@id='description']/div[2]/div/div/p/label");
+
 
     public AdvertisementPage(Browser driver) {
         super(driver);
@@ -63,7 +67,7 @@ public class AdvertisementPage extends AbstractPage {
 
     public void TestFileUpload() {
         {
-            driver.findElement(By.xpath(".//*[@id='add-file-1']/div/a")).click();
+            driver.findElement(addFile).click();
             Advertisement adv = new Advertisement();
             setClipboardData(adv.photoFilePath);
 
@@ -99,6 +103,6 @@ public class AdvertisementPage extends AbstractPage {
     }
     public boolean isError()
     {
-        return(driver.findElement(By.xpath(".//*[@id='title']/div[2]/div/div/p[2]")).isDisplayed()&&driver.findElement(By.xpath(".//*[@id='description']/div[2]/div/div/p/label")).isDisplayed());
+        return(driver.findElement(titleError).isDisplayed()&&driver.findElement(descriptionError).isDisplayed());
     }
 }

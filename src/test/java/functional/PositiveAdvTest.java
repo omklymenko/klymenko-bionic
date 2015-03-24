@@ -39,7 +39,7 @@ public class PositiveAdvTest extends AbstractTest{
         advPage.setAdv(adv);
         advertisementPage.preview();
         PreviewPage previewPage = new PreviewPage(driver);
-        Assert.assertTrue(previewPage.isOpened());
+        Assert.assertTrue(previewPage.isOpened(), "positiveAdvTest FAILED");
     }
 }
 

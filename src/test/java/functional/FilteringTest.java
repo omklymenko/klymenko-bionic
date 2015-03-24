@@ -20,18 +20,15 @@ import java.util.concurrent.TimeUnit;
  */
 public class FilteringTest extends AbstractTest {
     Logger logger = LoggerFactory.getLogger(FilteringTest.class);
-    private static final By searchField = By.id("headerSearch");
-    private static final By searchButton = By.id("submit-searchmain");
     @Test
     public void searchTest()
     {
         logger.info("Search test");
         HomePage homePage = new HomePage(driver);
         homePage.open();
-        driver.findElement(searchField).sendKeys("BMW");
-        driver.findElement(searchButton).click();
         SearchPage searchPage = new SearchPage(driver);
-        Assert.assertTrue(searchPage.isPresent());
+        searchPage.itemSearch();
+        Assert.assertTrue(searchPage.isPresent(), "searchTest FAILED");
     }
     @Test
     public void stateNew(){
@@ -45,7 +42,7 @@ public class FilteringTest extends AbstractTest {
         ChildDressPage childDressPage = new ChildDressPage(driver);
         childDressPage.state();
         childDressPage.openOffer();
-        Assert.assertTrue(childDressPage.newIsChosen());
+        Assert.assertTrue(childDressPage.newIsChosen(), "stateTest FAILED");
     }
     @Test
     public void priceFilter(){
